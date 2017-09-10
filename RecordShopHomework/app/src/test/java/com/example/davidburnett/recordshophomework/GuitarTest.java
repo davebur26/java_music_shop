@@ -14,7 +14,7 @@ public class GuitarTest {
 
     @Before
     public void before(){
-        guitar = new Guitar("Red","Pine",200.00,300.00, 6 );
+        guitar = new Guitar("Gibson","Red","Pine",200.00,300.00, 6 , InstrumentFamily.STRINGS);
     }
 
     @Test
@@ -28,8 +28,17 @@ public class GuitarTest {
         assertEquals("Pine",guitar.getMaterial());
         assertEquals(200.00, guitar.getBuyPrice(), 1e-6);
         assertEquals(300.00, guitar.getSellPrice(), 1e-6);
+        assertEquals(InstrumentFamily.STRINGS, guitar.getFamily());
+    }
 
+    @Test
+    public void testPlayGuitar(){
+        assertEquals("twang", guitar.play());
+    }
 
+    @Test
+    public void testMarkUp(){
+        assertEquals(1.5, guitar.markUp(), 1e-6);
     }
 
 }

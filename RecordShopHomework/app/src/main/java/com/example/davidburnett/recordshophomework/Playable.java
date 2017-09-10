@@ -6,5 +6,5 @@ package com.example.davidburnett.recordshophomework;
 
 public interface Playable {
 
-    void play();
+     String play();
 }

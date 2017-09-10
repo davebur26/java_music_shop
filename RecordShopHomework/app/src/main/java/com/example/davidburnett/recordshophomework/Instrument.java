@@ -11,15 +11,22 @@ public abstract class Instrument {
     private String material;
     private Double buyPrice;
     private Double sellPrice;
+    private String name;
+    private InstrumentFamily family;
 
 
-    public  Instrument(String colour, String material, Double buyPrice, Double sellPrice) {
+    public  Instrument(String name, String colour, String material, Double buyPrice, Double sellPrice, InstrumentFamily family) {
+        this.name = name;
         this.colour = colour;
         this.material = material;
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
+        this.family = family;
     }
 
+    public String getName() {
+        return name;
+    }
 
     public String getColour() {
         return colour;
@@ -35,5 +42,13 @@ public abstract class Instrument {
 
     public Double getSellPrice() {
         return sellPrice;
+    }
+
+    public Double markUp(){
+        return sellPrice / buyPrice;
+    }
+
+    public InstrumentFamily getFamily() {
+        return family;
     }
 }

@@ -14,12 +14,17 @@ public class PianoTest {
 
     @Before
     public void before(){
-        piano = new Piano ( "White", "Steel", 1000.00, 2000.00, 235 );
+        piano = new Piano ("Grand", "White", "Steel", 1000.00, 2000.00, 235 , InstrumentFamily.KEYBOARD);
     }
 
     @Test
     public void testNumberOfKeys(){
         assertEquals(235, piano.getNumberOfKeys());
+    }
+
+    @Test
+    public void testPianoPlay(){
+        assertEquals("pia pia piano", piano.play());
     }
 
 }
